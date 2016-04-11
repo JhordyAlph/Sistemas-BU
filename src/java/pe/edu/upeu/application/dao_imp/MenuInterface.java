@@ -7,6 +7,7 @@ package pe.edu.upeu.application.dao_imp;
 
 
 import java.util.List;
+import java.util.Map;
 import pe.edu.aplication.model.acceso_grupo;
 
 /**
@@ -14,5 +15,5 @@ import pe.edu.aplication.model.acceso_grupo;
  * @author JSE
  */
 public interface MenuInterface {
-  public List <acceso_grupo> listar_menu (String id_rol);
+  public List<Map<String, ?>> listar_menu (String id_rol);
 }

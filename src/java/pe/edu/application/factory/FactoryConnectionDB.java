@@ -15,7 +15,7 @@ public class FactoryConnectionDB {
     public static final int ORACLE = 2;
     public static final int POSTGRESQL = 3;
     public static String[] configMYSQL ={"bd_prueva","root","jse"};
-    public static String[] configORACLE ={"bd_tienda", "123", "localhost", "1521", "xe"};
+    public static String[] configORACLE ={"BienestarUni", "bienestar", "192.168.20.194", "1521", "xe"};
     public static String[] configPOSTGRESQL ={"academico","postgres","plsql"};
     public static ConexionBD open(int typeDB){
         switch(typeDB){

@@ -4,9 +4,17 @@
         <servlet-name>CMenu</servlet-name>
         <servlet-class>pe.edu.aplication.web.controller.CMenu</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CAccesos</servlet-name>
+        <servlet-class>pe.edu.aplication.web.controller.CAccesos</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CMenu</servlet-name>
         <url-pattern>/menu</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CAccesos</servlet-name>
+        <url-pattern>/accesos</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

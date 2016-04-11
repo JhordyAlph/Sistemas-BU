@@ -4,27 +4,35 @@ $(document).ready(inicializarEvento);
 function inicializarEvento(){
 var jse =1;
   listar_menu(jse);
-  //listar_direccion(jse);
-  //iniciar_labes();
+ 
+  // iniciar_labes();
 }
 
 
 function listar_menu(jse){ 
-  
+   console.log("aaaaaa");
      $.ajax({
-          type: "POST",
-          url: "menu",
-          dataType: "json",
-          data: {acceso : jse }
-          ,error: function (data) {
-                sweetAlert("Oops...", "Error al Recuperar datos de Interacción listar_menu", "error");
+         type: 'POST',
+         url: 'accesos',
+         data:'opc=list',
+         error: function (data) {
+                console.log("error !!");
               },
           success: function(data) {
-             
-               recorrer_menu(data);
-               //click();
-                          }//final de la funcion
-                          });//final del ajax
+              console.log("datos bd");
+             console.log(data);
+             $.each(data ,function(id , json){
+                 $.each(json , function(i , datos){
+                     console.log(datos);
+                     var labels='';
+                          labels+='<li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>'+datos.IDEMPLEADO+'</span></a></li>';
+                          labels+='<li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>'+datos.PROFESION+'</span></a></li>';
+                          
+              $("#menu2").append(labels);
+                 });
+             });
+                }
+            });
 
 }
 function recorrer_menu(data){
@@ -59,23 +67,6 @@ function recorrer_menu(data){
               $("#menu").append(html);  
 } 
 
-function listar_direccion(jse){ 
-
-               $.ajax({
-          type: "POST",
-          url: "listar_direccion",
-               dataType: "json",
-          data: {
-            acceso : jse
-          },error: function (data) {
-                sweetAlert("Oops...", "Error al Recuperar datos de Interacción listar_direccion", "error");
-              },
-          success: function(data) {
-             recorrer_links(data);
-            click1();
-              }//final de la funcion
-                          
-              });/*final del ajax*/ }
 
 function recorrer_links(data){
                 $.each(data, function (i, r) {
