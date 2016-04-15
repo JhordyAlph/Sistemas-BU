@@ -791,7 +791,7 @@ jjynhhhyyyy-->
         <!-- jQuery 2.1.4 -->
         <script src="../../plugins/jQuery/jQuery-2.1.4.min.js"></script>
         
-     
+        <script src="../../js/Cuenta_Usuario.js" type="text/javascript"></script>
 
         <script src="../../plugins/sweetalert/dist/sweetalert.min.js"></script>
         <script src="../../bootstrap/js/bootstrap.min.js"></script>
