@@ -9,12 +9,14 @@ import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import pe.edu.upeu.application.dao.Create_InformesDao;
 
 /**
  *
@@ -38,7 +40,23 @@ public class CCreate_Informes extends HttpServlet {
         PrintWriter out = response.getWriter();
         Map<String, Object> rpta = new HashMap<String, Object>();
         
-         rpta.put("mensaje","error");
+         //rpta.put("mensaje","error");
+           // Gson gson = new Gson();
+           
+             //rpta.put("lista", rpta)
+           //  rpta.put("lista",rpta);
+           try {
+      // La siguiente línea es para poder apreciar el efecto AJAX.
+      Thread.currentThread().sleep(2000);
+      // Dato
+      String codigo = request.getParameter("codigo");
+      // Proceso
+               Create_InformesDao model = new Create_InformesDao();
+      List<Map<String, ?>> lista = model.listar_alumnado(codigo);
+      rpta.put("lista", lista);
+    } catch (Exception e) {
+      rpta.put("mensaje", e.getMessage());
+    }
             Gson gson = new Gson();
             out.print(gson.toJson(rpta));
             out.flush();
