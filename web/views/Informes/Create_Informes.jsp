@@ -365,7 +365,7 @@
                         </div><!-- /.box -->
                         <!-- /.box-header -->
                         <div class="box-body">
-                            <table  class="informe table table-bordered table-hover">
+                            <table class="informe table table-bordered table-hover">
                                 <thead>
 
                                     <tr>

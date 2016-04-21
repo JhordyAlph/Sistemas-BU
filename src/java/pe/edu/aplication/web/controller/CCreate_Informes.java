@@ -51,9 +51,27 @@ public class CCreate_Informes extends HttpServlet {
       // Dato
       String codigo = request.getParameter("codigo");
       // Proceso
-               Create_InformesDao model = new Create_InformesDao();
+    Create_InformesDao model = new Create_InformesDao();
       List<Map<String, ?>> lista = model.listar_alumnado(codigo);
-      rpta.put("lista", lista);
+      String json = "{\n" +
+"  \"data\": [\n" +
+"    {\n" +
+"      \"name\": \"Tiger Nixon\",\n" +
+"      \"position\": \"System Architect\",\n" +
+"      \"salary\": \"$320,800\",\n" +
+"      \"start_date\": \"2011/04/25\",\n" +
+"      \"office\": \"Edinburgh\",\n" +
+"      \"extn\": \"5421\"\n" +
+"    },\n" +
+"    {\n" +
+"      \"name\": \"Garrett Winters\",\n" +
+"      \"position\": \"Accountant\",\n" +
+"      \"salary\": \"$170,750\",\n" +
+"      \"start_date\": \"2011/07/25\",\n" +
+"      \"office\": \"Tokyo\",\n" +
+"      \"extn\": \"8422\"\n" +
+"    } ]}";
+      rpta.put("lista", json);
     } catch (Exception e) {
       rpta.put("mensaje", e.getMessage());
     }

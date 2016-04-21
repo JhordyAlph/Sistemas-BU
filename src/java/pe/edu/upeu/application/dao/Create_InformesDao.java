@@ -26,11 +26,11 @@ ConexionBD conn;
           List<Map<String, ?>> lista = new ArrayList<Map<String, ?>>();
         try {
             this.conn = FactoryConnectionDB.open(FactoryConnectionDB.ORACLE);
-            String sql = "SELECT A.IDALUMNO,A.CODIGO,P.NOMBRE,P.APELL_PAT,P.APELL_MAT,P.DNI,A.CARRERA FROM ALUMNOS A,PERSONA P WHERE A.IDPERSONA=P.IDPERSONA";
+            String sql = "SELECT A.ID_ALUMNO,A.CODIGO,P.NOMBRE,P.APELL_PAT,P.APELL_MAT,P.DNI,A.CARRERA FROM ALUMNOS A,PERSONA P WHERE A.ID_PERSONA=P.ID_PERSONA";
             ResultSet rs = this.conn.query(sql);
             while (rs.next()) {
                 Map<String, Object> cd = new HashMap<String, Object>();
-                cd.put("IDALUMNO",rs.getString("IDALUMNO"));
+                cd.put("ID_ALUMNO",rs.getString("ID_ALUMNO"));
                 cd.put("CODIGO",rs.getString("CODIGO"));
                  cd.put("NOMBRE",rs.getString("NOMBRE"));
                 cd.put("APELL_PAT",rs.getString("APELL_PAT"));
