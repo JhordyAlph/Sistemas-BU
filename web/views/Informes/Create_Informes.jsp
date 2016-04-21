@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
         <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
         <link rel="stylesheet" href="../../plugins/sweetalert/dist/sweetalert.css"> 
-
+        <link href="../../dist/css/mdb.css" rel="stylesheet" type="text/css"/>
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
         <div class="wrapper">
@@ -725,9 +725,9 @@
         <script src="../../plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
         <script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
         <script src="../../plugins/chartjs/Chart.min.js"></script>
-
+        <script src="../../dist/js/mdb.js" type="text/javascript"></script>
         <script src="../../dist/js/demo.js"></script>
-
+        <script src="../../dist/js/bootstrap.min.js" type="text/javascript"></script>
 
         <!--funcionnes-->
 
