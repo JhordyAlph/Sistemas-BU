@@ -1,9 +1,10 @@
-<%-- 
-    Document   : index
-    Created on : 09/04/2016, 09:54:30 PM
-    Author     : JSE
---%>
-
+<%
+    HttpSession sesion = request.getSession();
+    String id_user = (String) sesion.getAttribute("IDUSER");
+    if (id_user != null) {
+        Empleado us = new Empleado();
+%>
+<%@page import="pe.edu.aplication.model.Empleado"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -274,7 +275,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="index.jsp?opc=logout" class="btn btn-default btn-flat">Salir</a>
                 </div>
               </li>
             </ul>
@@ -1382,3 +1383,7 @@
 <script src="dist/js/demo.js"></script>
 </body>
 </html>
+<%} else {
+        out.print("<script> window.location.href = '/SIS/';</script>");
+    }
+%>

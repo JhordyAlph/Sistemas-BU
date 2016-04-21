@@ -5,51 +5,34 @@
  */
 package pe.edu.aplication.web.controller;
 
-import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.HashMap;
-import java.util.Map;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import javax.websocket.Session;
 
 /**
  *
  * @author AlphaTeam
  */
-public class Cindex extends HttpServlet {
+public class CPrincipal extends HttpServlet {
 
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       response.setContentType("application/json;charset=UTF-8");;
-        HttpSession sesion = request.getSession();
-        PrintWriter out = response.getWriter();
-         Map<String, Object> rpta = new HashMap<String, Object>();
-        String user; user = request.getParameter("user");
-        String pass; pass = request.getParameter("pass");
-        String opc; opc = request.getParameter("opc");
-         
-        if(user.equals("admin") && pass.equals("admin")){
-           sesion.setAttribute("IDUSER", user);
-           response.sendRedirect("principal");
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            response.sendRedirect("principal.jsp");
         }
-            
-        if (opc.equals("logout")) {
-            System.out.println(opc);
-          sesion.invalidate();
-          RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
-          dispatcher.forward(request, response);
-                    }
-         rpta.put("mensaje","error");
-            Gson gson = new Gson();
-            out.print(gson.toJson(rpta));
-            out.flush();
-            out.close();
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -16,6 +16,10 @@
         <servlet-name>CCreate_Informes</servlet-name>
         <servlet-class>pe.edu.aplication.web.controller.CCreate_Informes</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CPrincipal</servlet-name>
+        <servlet-class>pe.edu.aplication.web.controller.CPrincipal</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CMenu</servlet-name>
         <url-pattern>/menu</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>CCreate_Informes</servlet-name>
         <url-pattern>/create_informe</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CPrincipal</servlet-name>
+        <url-pattern>/principal</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

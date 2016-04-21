@@ -7,98 +7,106 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!DOCTYPE html>
-<html >
+<html>
   <head>
     <meta charset="UTF-8">
-    <title>Login form</title>
-    <script src="http://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
-    <link href='http://fonts.googleapis.com/css?family=Raleway:300,200' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
-    <link href="css/reset.css" rel="stylesheet" type="text/css"/>
     <link href="css/style.css" rel="stylesheet" type="text/css"/>
-
+    <title>Login form</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="dist/css/mdb.css" rel="stylesheet" type="text/css"/>
+    <!-- Material Design Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <style>
+        .fondo_login{
+            background: rgba(0,0,0,0.6);
+            border-radius: 20px;
+            padding: 50px;
+            color: #ffffff;
+            font-size: 30px;
+            margin-top: 5%;
+        }
+    </style>
   </head>
 
   <body>
-      <div class="subtitulo">Sistems Control Insidencias Bienestar Univercitario</div>
-      <div class="titulo">Login </div>
-      <form id="login_SIS">
-<div class="form">
-  <div class="forceColor"></div>
+
+
+      <div class="row">
+          <div class="col-md-8 text-center">
+              <!--Content-->
+           
+
+                  <h2>Control de Insidencias</h2>
+
+                  <p>Sistemas de control de insidencoas en el cual se registran las insidencias cometidas el la univercidad </p>
+
+                  <a href="#sec-best-features" class="btn btn-success btn-ptc btn-lg waves-effect waves-light">Learn </a>
+
+          </div>
+          <div class="col-md-4">
+            
+             <div class="container">
+                    <div class="row">
+
+
+                        <!--Form-->
+                        <div class="col-md-6 wow fadeInRight">
+                            <div class="fondo_login">
+
+                                <!--Header-->
+                                <div class="text-center">
+                                    <h4><i class="fa fa-user " style="font-size:100px;"> </i> Login </h4>
+                                    <a class="btn-floating btn-large fb-bg waves-effect blue"><i class="fa fa-facebook"> </i></a>
+                                    <a class="btn-floating btn-large tw-bg waves-effect blue-grey"><i class="fa fa-twitter"> </i></a>
+                                    <a class="btn-floating btn-large gplus-bg waves-effect red"><i class="fa fa-google-plus"> </i></a>
+                                
+                                </div>
+                                <!--/.Header-->
+
+                                <!--Form-->
+                                <form  method="POST">
+                                  
+                                    <br>
+                                    <div class="input-field">
+                                        <input id="user" type="text" name="user" class="user validate">
+                                        <label  for="user">Usuario</label>
+                                    </div>
+
+                                    <div class="input-field">
+                                        <input id="password" type="password" name="pass" class="password validate">
+                                        <label for="password">Password</label>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <button type="button" class="btn_login btn btn-default btn-lg btn-ptc waves-effect waves-light">Entrar</button>
+                                       
+                                    </div>
+                                    <div class="text-center">
+                                        <label class="notifi"></label>
+                                    </div> 
+                                </form>
+                                <!--/.Form-->
+
+                            </div>
+                        </div>
+                        <!--/.Form-->
+
+                    </div>
+                </div>
+              </div>
+          </div>
+      </div>
+
+      
+
  
-  <div class="topbar">
-    <div class="spanColor"></div>
-    <div class="spanColor" style="margin-top: 21%; "></div>
-    <input name="user" type="text" class="input" id="usuario" placeholder="Usuario"/>
-    <hr/>
-    <input name="pass" type="password" class="input" id="password" placeholder="Password"/>
-  </div>
-  <button class="submit" id="submit" >Login</button>
-</div>
-      </form>
-
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
- <script src="js/index.js" type="text/javascript"></script>
  <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
-<script src="plugins/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="js/index.js" type="text/javascript"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
-<script src="plugins/fastclick/fastclick.js"></script>
-<script src="dist/js/app.min.js"></script>
-<script src="plugins/sparkline/jquery.sparkline.min.js"></script>
-<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<script src="plugins/chartjs/Chart.min.js"></script>
-<script src="dist/js/plugin/jquery-form/jquery-form.min.js" type="text/javascript"></script>
-<script src="dist/js/plugin/jquery-validate/jquery.validate.min.js" type="text/javascript"></script>
- <script type="text/javascript">
-        document.oncontextmenu = function () {
-            return false;
-        }
-        runAllForms();
-        function nobackbutton() {
-            window.location.hash = "no-back-button";
-            window.location.hash = "Again-No-back-button" //chrome
-            window.onhashchange = function () {
-                window.location.hash = "";
-            }
-        }
-
-        $(function () {
-            // Validation
-            $("#login-form").validate({
-                // Rules for form validation
-                rules: {
-                    email: {
-                        required: true,
-                        email: true
-                    },
-                    password: {
-                        required: true,
-                        minlength: 3,
-                        maxlength: 20
-                    }
-                },
-                // Messages for form validation
-                messages: {
-                    email: {
-                        required: 'Please enter your email address',
-                        email: 'Please enter a VALID email address'
-                    },
-                    password: {
-                        required: 'Please enter your password'
-                    }
-                },
-                // Do not change code below
-                errorPlacement: function (error, element) {
-                    error.insertAfter(element.parent());
-                }
-            });
-        });
-        </script>
-    
+<script src="dist/js/mdb.js" type="text/javascript"></script>
+ 
   </body>
 </html>
 
