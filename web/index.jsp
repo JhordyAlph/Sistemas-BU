@@ -23,21 +23,21 @@
   <body>
       <div class="subtitulo">Sistems Control Insidencias Bienestar Univercitario</div>
       <div class="titulo">Login </div>
+      <form id="login_SIS">
 <div class="form">
   <div class="forceColor"></div>
  
   <div class="topbar">
     <div class="spanColor"></div>
     <div class="spanColor" style="margin-top: 21%; "></div>
-    <input type="text" class="input" id="usuario" placeholder="Usuario"/>
+    <input name="user" type="text" class="input" id="usuario" placeholder="Usuario"/>
     <hr/>
-    <input type="password" class="input" id="password" placeholder="Password"/>
+    <input name="pass" type="password" class="input" id="password" placeholder="Password"/>
   </div>
   <button class="submit" id="submit" >Login</button>
 </div>
-<article class="article">
-    
-</article>
+      </form>
+
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
  <script src="js/index.js" type="text/javascript"></script>
@@ -51,9 +51,53 @@
 <script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
 <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <script src="plugins/chartjs/Chart.min.js"></script>
-<script src="dist/js/pages/dashboard2.js"></script>
-<script src="dist/js/demo.js"></script>
-    
+<script src="dist/js/plugin/jquery-form/jquery-form.min.js" type="text/javascript"></script>
+<script src="dist/js/plugin/jquery-validate/jquery.validate.min.js" type="text/javascript"></script>
+ <script type="text/javascript">
+        document.oncontextmenu = function () {
+            return false;
+        }
+        runAllForms();
+        function nobackbutton() {
+            window.location.hash = "no-back-button";
+            window.location.hash = "Again-No-back-button" //chrome
+            window.onhashchange = function () {
+                window.location.hash = "";
+            }
+        }
+
+        $(function () {
+            // Validation
+            $("#login-form").validate({
+                // Rules for form validation
+                rules: {
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    password: {
+                        required: true,
+                        minlength: 3,
+                        maxlength: 20
+                    }
+                },
+                // Messages for form validation
+                messages: {
+                    email: {
+                        required: 'Please enter your email address',
+                        email: 'Please enter a VALID email address'
+                    },
+                    password: {
+                        required: 'Please enter your password'
+                    }
+                },
+                // Do not change code below
+                errorPlacement: function (error, element) {
+                    error.insertAfter(element.parent());
+                }
+            });
+        });
+        </script>
     
   </body>
 </html>
