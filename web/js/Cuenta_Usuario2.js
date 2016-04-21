@@ -5,11 +5,12 @@ $(document).ready(function (){
 function dtalist(){
 
     $('.informe').DataTable({
-         "url": "../create_informe?opc=getFotos",
+        "autoWidth": true,
+          "ajax": {
+           "url": "../../create_informe?opc=getFotos",
             "type": "POST",
-            "dataSrc":"foto",
-            "processing": true,
-        "serverSide": true,
+            "dataSrc":"foto"
+        },
         "columns": [
            {"data":"ID_ALUMNO"},
             {"data":"CODIGO"},
@@ -21,7 +22,7 @@ function dtalist(){
         ]
     });
 }
-
+/*
 function inicializarEvento(){
 $.ajax({
      type: 'POST',
@@ -55,4 +56,10 @@ $.ajax({
  // var one =1;
   //listar_alumnos(one);
 }
+
+
+*/
+
+
+
 });
