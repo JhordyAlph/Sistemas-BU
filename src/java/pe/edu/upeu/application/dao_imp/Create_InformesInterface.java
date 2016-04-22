@@ -14,4 +14,5 @@ import java.util.Map;
  */
 public interface Create_InformesInterface {
      public List<Map<String, ?>> listar_alumnado (String codigo);
+     public List<Map<String,?>> formulario_alumnado();
 }

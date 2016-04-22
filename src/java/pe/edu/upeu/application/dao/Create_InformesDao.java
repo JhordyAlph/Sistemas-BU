@@ -26,7 +26,7 @@ ConexionBD conn;
           List<Map<String, ?>> lista = new ArrayList<Map<String, ?>>();
         try {
             this.conn = FactoryConnectionDB.open(FactoryConnectionDB.ORACLE);
-            String sql = "SELECT A.ID_ALUMNO,A.CODIGO,P.NOMBRE,P.APELL_PAT,P.APELL_MAT,P.DNI,A.CARRERA FROM ALUMNOS A,PERSONA P WHERE A.IDPERSONA=P.IDPERSONA";
+            String sql = "SELECT A.ID_ALUMNO,A.CODIGO,P.NOMBRE,P.APELL_PAT,P.APELL_MAT,P.DNI,A.CARRERA FROM ALUMNOS A,PERSONA P WHERE A.ID_PERSONA=P.ID_PERSONA";
             ResultSet rs = this.conn.query(sql);
             while (rs.next()) {
                 Map<String, Object> cd = new HashMap<String, Object>();
@@ -53,6 +53,11 @@ ConexionBD conn;
         return lista;
 
 //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Map<String, ?>> formulario_alumnado() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
