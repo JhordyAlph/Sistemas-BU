@@ -33,8 +33,21 @@ function dtalist(){
                $('#codigo_a').val(json.CODIGO);
                $('#dni_a').val(json.DNI);
             });
+             $('#myModalaw').modal({
+        show: 'true'
+    }); 
         } );
 }
+function Agregar_Involucrado() {
+      $.ajax({
+        type: "POST",
+        url: "test.php",
+        data: "name=name&location=location",
+        success: function(msg){
+          alert( "Data Saved: " + msg );
+        }
+      });
+    }
 /*
 function inicializarEvento(){
 $.ajax({

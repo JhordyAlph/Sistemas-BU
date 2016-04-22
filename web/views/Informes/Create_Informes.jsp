@@ -351,18 +351,8 @@
                             <div class="box">
                                 <div class="box-header">
                                     <h4 class="box-title">Lista de Alumnos de la UpeU</h4>
-
-                                    <div class="box-header with-border">
-
-                                        <div class="box-tools pull-right">
-                                            <div class="has-feedback">
-                                                <input type="text" class="form-control input-sm" placeholder="Search...">
-                                                <span class="glyphicon glyphicon-search form-control-feedback"></span>
-                                            </div>
-                                        </div><!-- /.box-tools -->
-                                        <!-- /.box-header -->
-                                        <!-- /.box-body -->
-                                    </div><!-- /.box -->
+                                  
+                                
                                     <!-- /.box-header -->
                                     <div class="box-body">
                                         <table class="informe table table-bordered table-hover">
@@ -387,66 +377,96 @@
 
 
                             </div>
-                            <div class="box">
-                                <div class="box-header">
-                                    <h3>Data del Alumno</h3>
-                                    <div class="col-md-4">
-                                        <div style ="margin-bottom: 20px;
-                                             margin-top: 10px;">
-                                            <div>
 
-                                                <img src="../../../img/descarga.jpg" alt=""/>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModalaw" role="dialog">
+                                <div class="modal-dialog modal-lg">
+
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Data del Alumno</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="box">
+                                                <div class="box-header">
+                                                 
+                                                    <div class="col-md-4">
+                                                        <div style ="margin-bottom: 20px;
+                                                             margin-top: 10px;">
+                                                            <div>
+                                                               
+                                                                <img src="../../img/people256x256.jpg" alt="256*256" class="img-circle"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <div style="margin-top: 0;
+                                                             ">
+                                                            <form id="myform" class="form-horizontal">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-xs-3 ">Nombre:</label>
+                                                                    <div class="col-xs-6 col-md-8 ">
+                                                                        <input type="text" class="form-control" id="nombre_a" placeholder="Nombre">
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-xs-3 ">Apellido Materno:</label>
+                                                                    <div class="col-xs-6 col-md-8">
+                                                                        <input id="apelido_m_a"type="text" class="form-control" id="inputPassword" placeholder="Apellido Materno">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-xs-3">Apellido Paterno:</label>
+                                                                    <div class="col-xs-6 col-md-8">
+                                                                        <input id="apellido_p_a" type="text" class="form-control" placeholder="Apellido Paterno"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-xs-3">Carrera:</label>
+                                                                    <div class="col-xs-6 col-md-8">
+                                                                        <input id="carrera_a" type="text" class="form-control" placeholder="Carrera">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-xs-3">Codigo:</label>
+                                                                    <div class="col-xs-6 col-md-8">
+                                                                        <input id="codigo_a"type="text" class="form-control" placeholder="Codigo">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-xs-3">DNI :</label>
+                                                                    <div class="col-xs-6 col-md-8">
+                                                                        <input id="dni_a"type="text" class="form-control" placeholder="DNI">
+                                                                    </div>
+                                                                </div>
+
+                                                            </form>
+                                                        </div> 
+                                                    </div>
+                                                </div>
+
                                             </div>
                                         </div>
+                                        <div class="modal-footer">
+                                            
+                                            <button type="button" class="btn btn-default" onclick="Agregar_Involucrado();"><i class="fa fa-male"></i> Agregar Involucrado</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
                                     </div>
-                                    <div class="col-md-8">
-                                        <div style="margin-top: 0;
-                                             ">
-                                            <form id="myform" class="form-horizontal">
-                                                <div class="form-group">
-                                                    <label class="control-label col-xs-3 ">Nombre:</label>
-                                                    <div class="col-xs-6 col-md-4 ">
-                                                        <input type="text" class="form-control" id="nombre_a" placeholder="Nombre">
-                                                    </div>
 
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-xs-3 ">Apellido Materno:</label>
-                                                    <div class="col-xs-6 col-md-4">
-                                                        <input id="apelido_m_a"type="text" class="form-control" id="inputPassword" placeholder="Apellido Materno">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-xs-3">Apellido Paterno:</label>
-                                                    <div class="col-xs-6 col-md-4">
-                                                        <input id="apellido_p_a" type="text" class="form-control" placeholder="Apellido Paterno"/>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-xs-3">Carrera:</label>
-                                                    <div class="col-xs-6 col-md-4">
-                                                        <input id="carrera_a" type="text" class="form-control" placeholder="Carrera">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-xs-3">Codigo:</label>
-                                                    <div class="col-xs-6 col-md-4">
-                                                        <input id="codigo_a"type="text" class="form-control" placeholder="Codigo">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-xs-3">DNI :</label>
-                                                    <div class="col-xs-6 col-md-4">
-                                                        <input id="dni_a"type="text" class="form-control" placeholder="DNI">
-                                                    </div>
-                                                </div>
-
-                                            </form>
-                                        </div> 
-                                    </div>
                                 </div>
-
                             </div>
+                            <!-- Aca termina el model -->
+
+
+
+
+
+
                             <div class="box">
                                 <div class="box-header">
                                     <h3>Descripcion del Informe </h3>
@@ -710,7 +730,7 @@
                  immediately after the control sidebar -->
 
         </div><!-- ./wrapper -->
-
+        <script src="../../dist/js/mdb.js" type="text/javascript"></script>
         <!-- jQuery 2.1.4 -->
         <script src="../../plugins/jQuery/jQuery-2.1.4.min.js"></script>
         <script src="../../dist/js/DataTable/jquery.dataTables.min.js" type="text/javascript"></script>
@@ -725,10 +745,9 @@
         <script src="../../plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
         <script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
         <script src="../../plugins/chartjs/Chart.min.js"></script>
-        <script src="../../dist/js/mdb.js" type="text/javascript"></script>
         <script src="../../dist/js/demo.js"></script>
-        <script src="../../dist/js/bootstrap.min.js" type="text/javascript"></script>
 
+        
         <!--funcionnes-->
 
         <!--script src="../../dist/js/app.min.js"></script>
