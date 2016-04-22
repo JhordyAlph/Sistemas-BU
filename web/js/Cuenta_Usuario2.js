@@ -4,7 +4,8 @@ $(document).ready(function (){
     dtalist();
 function dtalist(){
 
-    $('.informe').DataTable({
+    var table=$('.informe').DataTable({
+        "select":true,
         "autoWidth": true,
           "ajax": {
            "url": "../../create_informe?opc=getFotos",
@@ -21,6 +22,18 @@ function dtalist(){
             {"data":"CARRERA"}
         ]
     });
+   table
+        .on( 'select', function ( e, dt, type, indexes ) {
+            var rowData = table.rows( indexes ).data().toArray();
+            $.each(rowData , function(i,json){
+               $('#nombre_a').val(json.NOMBRE);
+               $('#apelido_m_a').val(json.APELL_MAT);
+               $('#apellido_p_a').val(json.APELL_PAT);
+               $('#carrera_a').val(json.CARRERA);
+               $('#codigo_a').val(json.CODIGO);
+               $('#dni_a').val(json.DNI);
+            });
+        } );
 }
 /*
 function inicializarEvento(){
