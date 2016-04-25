@@ -21,7 +21,8 @@
         <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
         <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
         <link rel="stylesheet" href="../../plugins/sweetalert/dist/sweetalert.css"> 
-        <link href="../../dist/css/mdb.css" rel="stylesheet" type="text/css"/>
+
+        <link href="../../dist/css/paginacion.css" rel="stylesheet" type="text/css"/>
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
         <div class="wrapper">
@@ -416,7 +417,7 @@
                                                                 <div class="form-group">
                                                                     <label class="control-label col-xs-3 ">Apellido Materno:</label>
                                                                     <div class="col-xs-6 col-md-8">
-                                                                        <input id="apelido_m_a"type="text" class="form-control" id="inputPassword" placeholder="Apellido Materno">
+                                                                        <input id="apellido_m_a" type="text" class="form-control" placeholder="Apellido Materno">
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">
@@ -434,13 +435,13 @@
                                                                 <div class="form-group">
                                                                     <label class="control-label col-xs-3">Codigo:</label>
                                                                     <div class="col-xs-6 col-md-8">
-                                                                        <input id="codigo_a"type="text" class="form-control" placeholder="Codigo">
+                                                                        <input id="codigo_a" type="text" class="form-control" placeholder="Codigo">
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label class="control-label col-xs-3">DNI :</label>
                                                                     <div class="col-xs-6 col-md-8">
-                                                                        <input id="dni_a"type="text" class="form-control" placeholder="DNI">
+                                                                        <input id="dni_a" type="text" class="form-control" placeholder="DNI">
                                                                     </div>
                                                                 </div>
 
@@ -452,8 +453,13 @@
                                             </div>
                                         </div>
                                         <div class="modal-footer">
+                                            <!--
+                                            <button type="button" class="btn btn-default" onclick="Agregar_Involucrado()"><i class="fa fa-male"></i> Agregar Involucrado</button>
+                                            -->
+                                           <button type="button" class="btn btn-default register"><i class="fa fa-male"></i> Agregar Involucrado</button>
+                                                    
                                             
-                                            <button type="button" class="btn btn-default" onclick="Agregar_Involucrado();"><i class="fa fa-male"></i> Agregar Involucrado</button>
+                                        
                                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                         </div>
                                     </div>
@@ -474,7 +480,13 @@
                                         <div class="form-group">
                                             <label class="control-label col-xs-3 ">Involucrados:</label>
                                             <div class="col-xs-6 col-md-4 ">
-                                                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                                <table>
+                                                    <tbody id="customUtility-container">
+                                                        
+                                                    </tbody>   
+                                                </table>
+
+          
                                             </div>
 
                                         </div>

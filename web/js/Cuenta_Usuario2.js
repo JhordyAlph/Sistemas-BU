@@ -2,53 +2,17 @@ $(document).ready(function (){
     
     //inicializarEvento();
     dtalist();
-function dtalist(){
 
-    var table=$('.informe').DataTable({
-        "select":true,
-        "autoWidth": true,
-          "ajax": {
-           "url": "../../create_informe?opc=getFotos",
-            "type": "POST",
-            "dataSrc":"foto"
-        },
-        "columns": [
-           {"data":"ID_ALUMNO"},
-            {"data":"CODIGO"},
-            {"data":"NOMBRE"},
-            {"data":"APELL_PAT"},
-            {"data":"APELL_MAT"},
-            {"data":"DNI"},
-            {"data":"CARRERA"}
-        ]
-    });
-   table
-        .on( 'select', function ( e, dt, type, indexes ) {
-            var rowData = table.rows( indexes ).data().toArray();
-            $.each(rowData , function(i,json){
-               $('#nombre_a').val(json.NOMBRE);
-               $('#apelido_m_a').val(json.APELL_MAT);
-               $('#apellido_p_a').val(json.APELL_PAT);
-               $('#carrera_a').val(json.CARRERA);
-               $('#codigo_a').val(json.CODIGO);
-               $('#dni_a').val(json.DNI);
-            });
-             $('#myModalaw').modal({
-        show: 'true'
-    }); 
-        } );
-}
-function Agregar_Involucrado() {
-      $.ajax({
-        type: "POST",
-        url: "test.php",
-        data: "name=name&location=location",
-        success: function(msg){
-          alert( "Data Saved: " + msg );
-        }
-      });
-    }
+
 /*
+function AgregarInvolucrado(){
+    var a  =jQuery.parseJSON(data);
+    console.log(a);
+    } 
+
+
+  
+ 
 function inicializarEvento(){
 $.ajax({
      type: 'POST',
@@ -89,3 +53,74 @@ $.ajax({
 
 
 });
+
+function dtalist(){
+
+   var table=$('.informe').DataTable({
+        "select":true,
+        "autoWidth": true,
+          "ajax": {
+           "url": "../../create_informe?opc=getFotos",
+            "type": "POST",
+            "dataSrc":"foto"
+        },
+        "columns": [
+           {"data":"ID_ALUMNO"},
+            {"data":"CODIGO"},
+            {"data":"NOMBRE"},
+            {"data":"APELL_PAT"},
+            {"data":"APELL_MAT"},
+            {"data":"DNI"},
+            {"data":"CARRERA"}
+        ]
+    });
+   table
+        .on( 'select', function ( e, dt, type, indexes ) {
+            var rowData = table.rows( indexes ).data().toArray();
+            $.each(rowData , function(i,json){
+               $('#nombre_a').val(json.NOMBRE);
+               $('#apellido_m_a').val(json.APELL_MAT);
+               $('#apellido_p_a').val(json.APELL_PAT);
+               $('#carrera_a').val(json.CARRERA);
+               $('#codigo_a').val(json.CODIGO);
+               $('#dni_a').val(json.DNI);
+            });
+             $('#myModalaw').modal({
+        show: 'true'
+    }); 
+        } );
+}
+ var personas = {};
+ var i=0;
+$('.register').on('click', function() {
+ 
+ var nombre = document.getElementById("nombre_a").value;
+ var apellidom=document.getElementById("apellido_m_a").value;
+ var apellidop=document.getElementById("apellido_p_a").value;
+ var carrera=document.getElementById("carrera_a").value;
+ var codigo=document.getElementById("codigo_a").value;
+  var dni=document.getElementById("dni_a").value;
+ 
+  console.log(i);   
+personas[i] = {nombre: nombre, apellido_paterno:apellidom,apellido_materno:apellidop,carrera:carrera,codigo:codigo};
+console.log(personas);
+ i ++;
+  var html = "";
+                    html +="<tr>";
+                    html += '<td><div id ="customUtility_' + i +' " name="customUtility_' + i +' ">'+ $("#customUtility").val() + '<a href="#customUtility-container" id="removeUtility'+i+'">Remove</a></div></td>'
+                    html +="</tr>";
+                    $("#customUtility-container").append(html);
+                   alert(i);
+$("#removeUtility"+i).on("click",function(){
+                         console.log("tu mamam");
+                    $(this).closest('div').remove();
+                    console.log(i);
+                    personas.s
+                                                i--;
+                        
+                    }); 
+
+
+});
+ 
+
