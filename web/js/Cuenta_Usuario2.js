@@ -90,7 +90,7 @@ function dtalist(){
     }); 
         } );
 }
- var personas = {};
+ var personas=[];
  var i=0;
 $('.register').on('click', function() {
  
@@ -102,24 +102,27 @@ $('.register').on('click', function() {
   var dni=document.getElementById("dni_a").value;
  
   console.log(i);   
-personas[i] = {nombre: nombre, apellido_paterno:apellidom,apellido_materno:apellidop,carrera:carrera,codigo:codigo};
-console.log(personas);
- i ++;
+personas.push(nombre+'_'+apellidom+'_'+apellidop+'_'+carrera+'_'+codigo);
+alert(personas[0]);
+alert(personas[i]);
+console.log(personas[i]);
+
+ 
   var html = "";
                     html +="<tr>";
-                    html += '<td><div id ="customUtility_' + i +' " name="customUtility_' + i +' ">'+ $("#customUtility").val() + '<a href="#customUtility-container" id="removeUtility'+i+'">Remove</a></div></td>'
+                    html += '<td><div  value="'+i+'"id ="customUtility_' + i +' " name="customUtility_' + i +'"   >'+nombre + '<a href="#customUtility-container" id="removeUtility'+i+'">Remove</a></div></td>'
                     html +="</tr>";
                     $("#customUtility-container").append(html);
                    alert(i);
-$("#removeUtility"+i).on("click",function(){
+                  $("#removeUtility"+i).on("click",function(){
                          console.log("tu mamam");
                     $(this).closest('div').remove();
+                    
                     console.log(i);
-                    personas.s
-                                                i--;
-                        
+                    
+                    alert(personas[0]);
                     }); 
-
+                      i ++;
 
 });
  
