@@ -101,26 +101,31 @@ $('.register').on('click', function() {
  var codigo=document.getElementById("codigo_a").value;
   var dni=document.getElementById("dni_a").value;
  
-  console.log(i);   
+  
 personas.push(nombre+'_'+apellidom+'_'+apellidop+'_'+carrera+'_'+codigo);
-alert(personas[0]);
-alert(personas[i]);
-console.log(personas[i]);
 
+
+var l=0;
  
   var html = "";
                     html +="<tr>";
                     html += '<td><div  value="'+i+'"id ="customUtility_' + i +' " name="customUtility_' + i +'"   >'+nombre + '<a href="#customUtility-container" id="removeUtility'+i+'">Remove</a></div></td>'
                     html +="</tr>";
                     $("#customUtility-container").append(html);
-                   alert(i);
+                   console.log(i+"i");
+                  
                   $("#removeUtility"+i).on("click",function(){
-                         console.log("tu mamam");
+                        var id = document.getElementById("removeUtility"+i).value;
+                        alert(id)
+                        ;
                     $(this).closest('div').remove();
-                    
-                    console.log(i);
-                    
-                    alert(personas[0]);
+                   console.log(i+"Ilate");
+               
+                   
+                   alert(personas[i]);
+                   personas.splice(i,1);
+                     alert(personas[i]);
+                     i--;
                     }); 
                       i ++;
 
